@@ -29,7 +29,7 @@ app.post("/compilecode", function (req,res)
         console.log(code)
         if (inputRadio==="true")
         {
-            var envData = {OS: "windows", cmd:"g++", options:{timeout: 10000}};
+            var envData = {OS: "linux", cmd:"g++", options:{timeout: 10000}};
             compiler.compileCPPWithInput(envData,code,input,function(data)
             {
                 if(data.error) {
@@ -46,7 +46,7 @@ app.post("/compilecode", function (req,res)
         }
         else 
         {
-            var envData = {OS: "windows", cmd:"g++", options:{timeout: 10000}};
+            var envData = {OS: "linux", cmd:"g++", options:{timeout: 10000}};
             compiler.compileCPP(envData,code,function(data){
                 //res.send(data);
                 if(data.error) {
@@ -67,7 +67,7 @@ app.post("/compilecode", function (req,res)
         console.log(code)
         if(inputRadio==="true")
         {
-            var envData={OS:"windows"};
+            var envData={OS:"linux"};
             compiler.compilePythonWithInput(envData, code, input,function(data) 
             {
                 //res.send(data);
@@ -85,7 +85,7 @@ app.post("/compilecode", function (req,res)
         }
         else
         {
-            var envData={OS:"windows"};
+            var envData={OS:"linux"};
             compiler.compilePython(envData, code,function(data) 
             {
                 //res.send(data);
@@ -106,7 +106,7 @@ app.post("/compilecode", function (req,res)
     {
         if(inputRadio==="true")
         {
-            var envData = { OS : "windows"};            
+            var envData = { OS : "linux"};            
             compiler.compileJavaWithInput( envData , code , input ,  function(data){
                 //res.send(data);
                 if(data.error) {
@@ -124,7 +124,7 @@ app.post("/compilecode", function (req,res)
         else
         {
             
-            var envData = { OS : "windows"};            
+            var envData = { OS : "linux"};            
             compiler.compileJava( envData , code , function(data){
                 //res.send(data);
                 if(data.error) {
@@ -144,7 +144,7 @@ app.post("/compilecode", function (req,res)
     {
         if(inputRadio==="true")
         {
-            var envData = { OS : "windows"}; 
+            var envData = { OS : "linux"}; 
             compiler.compileCSWithInput( envData , code , input ,  function(data){
                 //res.send(data);
                 if(data.error) {
@@ -161,7 +161,7 @@ app.post("/compilecode", function (req,res)
         }
         else
         {
-            var envData = { OS : "windows"};    
+            var envData = { OS : "linux"};    
             compiler.compileCS( envData , code , function(data){
                 //res.send(data);
                 if(data.error) {
