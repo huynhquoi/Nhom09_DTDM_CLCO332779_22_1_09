@@ -1,0 +1,102 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 20px;
+}
+
+h3, select, input{
+    margin-right: 10px;
+}
+
+h4{
+    font-size: 20px;
+}
+
+.complie{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.notice{
+    width: 30%;
+    display: block;
+}
+
+.note{
+    margin-bottom: 12px;
+    display: flex;
+    text-align: left;
+}
+
+.title{
+    border: 2px solid #000;
+    width: 100%;
+    height: 775px;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.in1{
+    width: 100%;
+    height: 500px;
+    font-size: 20px;
+}
+
+.in2{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+}
+
+.in3{
+    width: 100%;
+    height: 150px;
+    font-size: 20px;
+}
+
+
+.form{
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
+.space{
+    width: 5%;
+}
+
+.sumbit{
+    margin-left: 555px;
+}
+
+#submit{
+    width: 100px;
+    height: 25px;
+    color:#fff;
+    background-color: #000;
+}
+
+#submit:hover{
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+.run{
+    width: 150px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.run:hover{
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Điện toán đám mây</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body> 
+    <div>
+        <h1>Online IDE</h1>
+        <form id="myform" name="myform" method="post" action="compilecode">
+            <div class="complie">
+                <div class="notice">
+                    <div class="note">
+                        <h3>Lưu ý</h3>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <br/>  Lựa chọn đúng ngôn ngữ cần dùng <br/>
+                            Nếu không truyền giá trị vào thì chọn "No" cho "Complie with input"
+                        </p>
+                    </div>
+                </div>
+                <div class="space"></div>
+                <div class="form">
+                    <div class="code">
+                        <div class="cha">
+                            <div class="note">
+                                <h3>Code</h3><select class="chosecode" name="lang" onchange="setLang(this)">
+                                    <option value="C">C</option>
+                                    <option value="C++">C++</option>
+                                    <option value="C#">C#</option>
+                                    <option value="Java">Java</option>
+                                    <option value="Python">Python</option>
+                                </select>
+                                <h3>Compile With Input</h3>
+                                <input type="radio" name="inputRadio" id="inputRadio" value="true"/><h4>yes</h4>
+                                <div class="space"></div>
+                                <input type="radio" name="inputRadio" id="inputRadio" value="false"/><h4>no</h4>
+                                <br/>
+                            </div>
+                            <div class="sumbit">
+                                <!-- <input type="submit" name="submit" id="submit" value="RUN"/> -->
+                            </div>
+                         </div>
+                         <div class="in1" id="code" name="code"></div>
+                    </div>
+                    <br/>
+                    <div class="input">
+                        <div class="note">
+                            <h3>Input</h3>
+                        </div>
+                        <textarea class="in2" id="input" name="input"></textarea>
+                    </div>
+                    <br/>
+                    <div class="output">
+                        <div class="note">
+                            <h3>Output</h3>
+                        </div>
+                        <textarea class="in3" id="output" name="output"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button onclick="run()" class="run">Run</button>
+    </div>
+
+
+    <script src="./syntax/ace.js"></script>
+
+    <!-- Load predefined Themes-->
+    <script src="./syntax/theme-monokai.js"></script>
+    <script src="./syntax/theme-chaos.js"></script>
+    <script src="./syntax/theme-chrome.js"></script>
+    <script src="./syntax/theme-clouds.js"></script>
+    <script src="./syntax/theme-clouds_midnight.js"></script>
+    <script src="./syntax/theme-ambiance.js"></script>
+    <script src="./syntax/theme-eclipse.js"></script>
+    <script src="./index2.js"></script>
+    <script src="./index.js"></script>
+    <script>
+        let text="C"
+        function setLang(sel){
+            text = sel.options[sel.selectedIndex].text;
+            console.log(text)
+        }
+        function run(){
+            let source = document.getElementById("code").value
+            let input = document.getElementById("input").value
+            let output = document.getElementById("output")
+            let editor = ace.edit("code")
+            let language
+
+            switch(text){
+                case "C": language = "C"; break;
+                case "C++": language = "C++"; break;
+                case "C#": language = "C#"; break;
+                case "Python" : language = "Python"; break;
+                case "Java" : language = "Java"; break;
+            }
+
+            console.log(editor.session.getValue())
+            console.log(input)
+
+            fetch("http://localhost:8000/compilecode", {
+                method: "POST", 
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({"code":editor.session.getValue(),"input":input, "lang":language,"inputRadio":false }),
+                })
+                .then((response) =>{ 
+                    if(response.status === 200){
+                        //alert("success")
+                        console.log("success")
+                    }
+                    else{
+                        alert("Fail")
+                    }
+                    response.json().then((data) => {
+                        //console.log('Success:', data);
+                        console.log("data" + data)
+                        output.value = data
+                })
+                })
+                .catch((error) => {
+                    alert("Lỗi kết nối! Không tìm thấy " +error )
+                    console.log(error)
+                });   
+            
+        }
+    </script>
+</body>
+</html>
