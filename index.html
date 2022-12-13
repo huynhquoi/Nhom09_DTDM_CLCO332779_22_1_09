@@ -102,7 +102,7 @@
             console.log(editor.session.getValue())
             console.log(input)
 
-            fetch("http://localhost:8000/compilecode", {
+            fetch("/compilecode", {
                 method: "POST", 
                 headers: {
                     'Content-Type': 'application/json',
