@@ -15,7 +15,6 @@
 
 1. Thực hiện chọn Amazon Machine Image (AMI)
 <p align="center">
-<img src="[https://raw.githubusercontent.com/andresz1/size-limit-action/master/assets/pr.png](https://user-images.githubusercontent.com/115452240/208946442-084918e2-7b41-4219-9c93-8a11dadb1dae.png)"
-  alt="Size Limit comment in pull request about bundle size changes"
+<img src="![choose ami](https://user-images.githubusercontent.com/115452240/208946442-084918e2-7b41-4219-9c93-8a11dadb1dae.png)"
   width="686" height="289">
 </p>
