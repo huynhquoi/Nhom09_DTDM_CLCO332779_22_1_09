@@ -15,5 +15,7 @@
 
 1. Thực hiện chọn Amazon Machine Image (AMI)
 <p align="center">
-<img src="[1](https://user-images.githubusercontent.com/115452240/208946442-084918e2-7b41-4219-9c93-8a11dadb1dae.png)">
+<img src="![choose ami](https://user-images.githubusercontent.com/115452240/208946442-084918e2-7b41-4219-9c93-8a11dadb1dae.png)"
+     alt="Choose AMI"
+     width="686" height="289">
 </p>
