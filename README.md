@@ -14,6 +14,7 @@
 * Ở đây sử dụng dịch vụ điện toán đám mây của AWS
 
 1. Thực hiện chọn Amazon Machine Image (AMI)
+![choose ami](https://user-images.githubusercontent.com/115452240/208946442-084918e2-7b41-4219-9c93-8a11dadb1dae.png)
 <p align="center">
 <img src="![choose ami](https://user-images.githubusercontent.com/115452240/208946442-084918e2-7b41-4219-9c93-8a11dadb1dae.png)"
      alt="Choose AMI"
